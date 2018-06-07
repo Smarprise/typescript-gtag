@@ -8,6 +8,6 @@
     "sourceMap": true
   },
   "files": [
-    "gtag.ts"
+    "index.ts"
   ]
 }

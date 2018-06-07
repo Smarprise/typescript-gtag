@@ -22,4 +22,4 @@ var Gtag = (function () {
     return Gtag;
 }());
 exports.Gtag = Gtag;
-//# sourceMappingURL=gtag.js.map
+//# sourceMappingURL=index.js.map
