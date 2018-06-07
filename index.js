@@ -3,7 +3,7 @@ exports.__esModule = true;
 var Gtag = (function () {
     function Gtag() {
     }
-    Gtag.init = function (trackingID) {
+    Gtag.init = function (trackingID, param) {
         if (!Gtag.isInit) {
             window.dataLayer = window.dataLayer || [];
             var script = window.document.createElement("script");
@@ -13,7 +13,7 @@ var Gtag = (function () {
             Gtag.isInit = true;
             Gtag.gtag('js', new Date());
         }
-        Gtag.gtag('config', trackingID);
+        Gtag.gtag('config', trackingID, param);
     };
     Gtag.gtag = function (a, b, c) {
         window.dataLayer.push(arguments);

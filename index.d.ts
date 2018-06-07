@@ -11,6 +11,7 @@ export interface GtagAnalyticsEvent extends GtagParams {
     event_category?: string;
     event_label?: string;
     non_interaction?: boolean;
+    event_callback?: () => void;
     value?: any;
     [key: string]: any;
 }
@@ -36,7 +37,7 @@ export interface GtagAnalyticsConfig extends GtagParams {
 }
 export declare class Gtag {
     static isInit: boolean;
-    static init(trackingID: string): void;
+    static init(trackingID: string, param?: GtagAnalyticsConfig): void;
     static gtag(command: "js", date: Date): void;
     static gtag(command: "config", targetID: string, value?: GtagAnalyticsConfig): void;
     static gtag(command: "config", targetID: string, value?: {
