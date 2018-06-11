@@ -41,6 +41,8 @@ export interface GtagAnalyticsConfig extends GtagParams {
   page_title?: string;
   page_location?: string;
   page_path?: string;
+  transport_type?: 'image'|'xhr'|'beacon';
+  send_page_view?: boolean;
 }
 
 export class Gtag {
