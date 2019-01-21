@@ -14,7 +14,7 @@ export interface GtagAnalyticsEvent extends GtagParams {
   event_category?: string;
   event_label?: string;
   non_interaction?: boolean;
-  event_callback?: ()=>void;
+  event_callback?: () => void;
   value?: any;
   [key: string]: any;
 }
@@ -41,20 +41,20 @@ export interface GtagAnalyticsConfig extends GtagParams {
   page_title?: string;
   page_location?: string;
   page_path?: string;
-  transport_type?: 'image'|'xhr'|'beacon';
+  transport_type?: 'image' | 'xhr' | 'beacon';
   send_page_view?: boolean;
 }
 
 export class Gtag {
   public static isInit: boolean = false;
   public static init(trackingID: string, param?: GtagAnalyticsConfig) {
-    if (!Gtag.isInit) {
+    this.isInit = true;
+    if (!(window.dataLayer && window.dataLayer.push)) {
       window.dataLayer = window.dataLayer || [];
       let script = window.document.createElement("script");
       script.src = "https://www.googletagmanager.com/gtag/js?id=" + trackingID;
       script.async = true;
       window.document.head.appendChild(script);
-      Gtag.isInit = true;
       Gtag.gtag('js', new Date());
     }
     Gtag.gtag('config', trackingID, param);

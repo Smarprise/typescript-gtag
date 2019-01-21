@@ -1,6 +1,6 @@
 {
   "name": "gtag",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Smarprise Inc.",
   "description": "Global Site Tag Helper for Typescript",
   "engines": {
@@ -16,8 +16,7 @@
     "google",
     "gtag"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "typescript": "~2.9.1"
   },
